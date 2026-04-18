@@ -1,0 +1,107 @@
+version: "2"
+type: frontend
+tech_stack:
+  - language: HTML5
+  - framework: None (Vanilla HTML/JS)
+  - ui_library: Tailwind CSS (CDN)
+  - other: No build tool, single-page static site
+routes:
+  - path: /
+    file: index.html
+    auth_required: false
+    description: Main landing page with hero, features, services, about, and footer sections
+  - path: /#home
+    file: index.html
+    auth_required: false
+    description: Home section anchor
+  - path: /#about
+    file: index.html
+    auth_required: false
+    description: About section anchor
+  - path: /#services
+    file: index.html
+    auth_required: false
+    description: Services section anchor
+  - path: /#contact
+    file: index.html
+    auth_required: false
+    description: Contact/footer section anchor
+features:
+  - name: Navigation Header
+    description: Responsive sticky header with logo, desktop nav links, Get Started CTA button, and hamburger menu for mobile
+    files:
+      - index.html
+    entry_route: /
+    user_interactions:
+      - View logo "MyLogo" in the header
+      - Click Home, About, Services, Contact nav links
+      - Click Get Started button
+      - Click hamburger menu icon on mobile to toggle mobile nav
+      - Click nav links in mobile menu to navigate to sections
+    api_calls: []
+    auth_required: false
+  - name: Hero Section
+    description: Landing hero with headline, subtitle, Get Started and Learn More CTA buttons, and an illustration image
+    files:
+      - index.html
+    entry_route: /
+    user_interactions:
+      - View hero headline text
+      - Click Get Started button
+      - Click Learn More button
+    api_calls: []
+    auth_required: false
+  - name: Why Choose Us Section
+    description: Three feature cards showing Creative Design, Fast Performance, and Secure System with icons
+    files:
+      - index.html
+    entry_route: /
+    user_interactions:
+      - View three feature cards
+      - Hover over cards to see shadow effect
+    api_calls: []
+    auth_required: false
+  - name: Services Section
+    description: Three 3D-animated service cards for UI/UX Design, Web Development, and App Development
+    files:
+      - index.html
+    entry_route: /#services
+    user_interactions:
+      - View services section heading
+      - Hover over service cards to see 3D tilt animation
+    api_calls: []
+    auth_required: false
+  - name: About Section
+    description: About section with 3D image card, feature mini-cards (Fast Performance, Modern Design, Smart UX, Secure Build), and Let's Work Together CTA
+    files:
+      - index.html
+    entry_route: /#about
+    user_interactions:
+      - View about section content
+      - Hover over image to see 3D effect
+      - Hover over feature mini-cards to see lift animation
+      - Click Let's Work Together CTA link
+    api_calls: []
+    auth_required: false
+  - name: Footer Newsletter Subscription
+    description: Footer with logo, quick links, and email subscription input with Join button
+    files:
+      - index.html
+    entry_route: /
+    user_interactions:
+      - View footer logo and description
+      - Click footer quick links (Home, About, Services, Contact)
+      - Type email into subscription input field
+      - Click Join button to subscribe
+    api_calls: []
+    auth_required: false
+known_limitations:
+  - issue: Newsletter subscription Join button has no backend, form submission is UI-only
+    location: index.html (footer section)
+    impact: Clicking Join does not actually subscribe the user or send any data
+  - issue: Get Started and Learn More CTA buttons link to # (no actual destination)
+    location: index.html (hero section)
+    impact: Buttons do not navigate to any meaningful page or section
+  - issue: No contact form exists despite Contact being listed in navigation
+    location: index.html
+    impact: Contact nav link scrolls to footer but there is no actual contact form
